@@ -60,6 +60,7 @@
             сортировкаЗаказовToolStripMenuItem.Name = "сортировкаЗаказовToolStripMenuItem";
             сортировкаЗаказовToolStripMenuItem.Size = new Size(164, 24);
             сортировкаЗаказовToolStripMenuItem.Text = "Сортировка заказов";
+            сортировкаЗаказовToolStripMenuItem.Click += сортировкаЗаказовToolStripMenuItem_Click;
             // 
             // добавитьЗаказToolStripMenuItem
             // 

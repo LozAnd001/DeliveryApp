@@ -9,8 +9,14 @@ namespace DeliveryWinFormsApp
 
         private void добавитьЗаказToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var newOrder = new AddForm();
-            newOrder.ShowDialog();
+            var newAddedOrder = new AddForm();
+            newAddedOrder.ShowDialog();
+        }
+
+        private void сортировкаЗаказовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var listOrders = new SortForm();
+            listOrders.ShowDialog();
         }
     }
 }

@@ -14,5 +14,10 @@ namespace DeliveryWinFormsApp
         {
             orderViewModelsStorage.Add(order);
         }
+
+        public static List<OrderViewModel> GetOrders()
+        {
+            return orderViewModelsStorage;
+        }
     }
 }
