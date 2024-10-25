@@ -32,13 +32,13 @@
             weight = new DataGridViewTextBoxColumn();
             district = new DataGridViewTextBoxColumn();
             deliveryDate = new DataGridViewTextBoxColumn();
-            dateTimePicker1 = new DateTimePicker();
+            startDateTimePicker = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
-            dateTimePicker2 = new DateTimePicker();
+            finishDateTimePicker = new DateTimePicker();
             label3 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            districtTextBox = new TextBox();
+            sortButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ordersDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -73,12 +73,12 @@
             deliveryDate.Name = "deliveryDate";
             deliveryDate.Width = 125;
             // 
-            // dateTimePicker1
+            // startDateTimePicker
             // 
-            dateTimePicker1.Location = new Point(479, 30);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 1;
+            startDateTimePicker.Location = new Point(479, 30);
+            startDateTimePicker.Name = "startDateTimePicker";
+            startDateTimePicker.Size = new Size(250, 27);
+            startDateTimePicker.TabIndex = 1;
             // 
             // label1
             // 
@@ -98,12 +98,12 @@
             label2.TabIndex = 3;
             label2.Text = "По";
             // 
-            // dateTimePicker2
+            // finishDateTimePicker
             // 
-            dateTimePicker2.Location = new Point(479, 111);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 27);
-            dateTimePicker2.TabIndex = 4;
+            finishDateTimePicker.Location = new Point(479, 111);
+            finishDateTimePicker.Name = "finishDateTimePicker";
+            finishDateTimePicker.Size = new Size(250, 27);
+            finishDateTimePicker.TabIndex = 4;
             // 
             // label3
             // 
@@ -114,35 +114,36 @@
             label3.TabIndex = 5;
             label3.Text = "Район";
             // 
-            // textBox1
+            // districtTextBox
             // 
-            textBox1.Location = new Point(478, 197);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 6;
-            textBox1.Text = "Все";
+            districtTextBox.Location = new Point(478, 197);
+            districtTextBox.Name = "districtTextBox";
+            districtTextBox.Size = new Size(125, 27);
+            districtTextBox.TabIndex = 6;
+            districtTextBox.Text = "Все";
             // 
-            // button1
+            // sortButton
             // 
-            button1.Location = new Point(479, 252);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 34);
-            button1.TabIndex = 7;
-            button1.Text = "Сортировать";
-            button1.UseVisualStyleBackColor = true;
+            sortButton.Location = new Point(479, 252);
+            sortButton.Name = "sortButton";
+            sortButton.Size = new Size(124, 34);
+            sortButton.TabIndex = 7;
+            sortButton.Text = "Сортировать";
+            sortButton.UseVisualStyleBackColor = true;
+            sortButton.Click += sortButton_Click;
             // 
             // SortForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(795, 397);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(sortButton);
+            Controls.Add(districtTextBox);
             Controls.Add(label3);
-            Controls.Add(dateTimePicker2);
+            Controls.Add(finishDateTimePicker);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(startDateTimePicker);
             Controls.Add(ordersDataGridView);
             Name = "SortForm";
             Text = "SortForm";
@@ -155,13 +156,13 @@
         #endregion
 
         private DataGridView ordersDataGridView;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker startDateTimePicker;
         private Label label1;
         private Label label2;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker finishDateTimePicker;
         private Label label3;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox districtTextBox;
+        private Button sortButton;
         private DataGridViewTextBoxColumn weight;
         private DataGridViewTextBoxColumn district;
         private DataGridViewTextBoxColumn deliveryDate;

@@ -26,5 +26,19 @@ namespace DeliveryWinFormsApp
             }
 
         }
+
+        private void sortButton_Click(object sender, EventArgs e)
+        {
+            ordersDataGridView.Rows.Clear();
+            var orders = OrderStorage.GetOrders();
+            var startTime = startDateTimePicker.Value;
+            var finishTime = finishDateTimePicker.Value;
+            var district = districtTextBox.Text;
+            foreach (var order in orders)
+            {
+                if(startTime <= order.OrderDeliveryDate && order.OrderDeliveryDate <= finishTime && (district == order.District.Name || district == "Все"))
+                    ordersDataGridView.Rows.Add(order.Weight, order.District.Name, order.OrderDeliveryDate.ToString());
+            }
+        }
     }
 }
