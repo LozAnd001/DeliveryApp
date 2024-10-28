@@ -1,21 +1,23 @@
-﻿using DeliveryWinFormsApp.Models;
+﻿
 
-namespace DeliveryWinFormsApp
+using DeliveryApp.Db.Models;
+
+namespace DeliveryApp.Db
 {
     public class OrderListRepository : IOrderRepository
     {
-        private readonly List<OrderViewModel> orderViewModels = new List<OrderViewModel>();
-        public void Add(OrderViewModel order)
+        private readonly List<Order> orderViewModels = new List<Order>();
+        public void Add(Order order)
         {
             orderViewModels.Add(order);
         }
 
-        public OrderViewModel Get(Guid id)
+        public Order Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public List<OrderViewModel> GetAll()
+        public List<Order> GetAll()
         {
             return orderViewModels;
         }
@@ -25,7 +27,7 @@ namespace DeliveryWinFormsApp
             throw new NotImplementedException();
         }
 
-        public void Update(OrderViewModel order)
+        public void Update(Order order)
         {
             throw new NotImplementedException();
         }

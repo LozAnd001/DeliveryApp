@@ -1,36 +1,31 @@
-﻿using DeliveryWinFormsApp.Models;
+﻿using DeliveryApp.Db.Models;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DeliveryWinFormsApp
+namespace DeliveryApp.Db
 {
     public class OrderJsonRepository : IOrderRepository
     {
         public static string path = "orders.json";
-        public void Add(OrderViewModel order)
+        public void Add(Order order)
         {
             var orders = GetAll();
             orders.Add(order);
             Save(orders);
         }
 
-        public OrderViewModel Get(Guid id)
+        public Order Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public List<OrderViewModel> GetAll()
+        public List<Order> GetAll()
         {
             if(!FileProvider.Exists(path))
             {
-                return new List<OrderViewModel>();
+                return new List<Order>();
             }
             var fileData = FileProvider.GetValue(path);
-            var orders = JsonConvert.DeserializeObject<List<OrderViewModel>>(fileData);
+            var orders = JsonConvert.DeserializeObject<List<Order>>(fileData);
             return orders;
         }
 
@@ -39,12 +34,12 @@ namespace DeliveryWinFormsApp
             throw new NotImplementedException();
         }
 
-        public void Update(OrderViewModel order)
+        public void Update(Order order)
         {
             throw new NotImplementedException();
         }
 
-        private void Save(List<OrderViewModel> orders)
+        private void Save(List<Order> orders)
         {
             var jsonData = JsonConvert.SerializeObject(orders, Formatting.Indented);
             FileProvider.Replace(path, jsonData);
