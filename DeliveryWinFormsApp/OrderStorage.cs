@@ -9,7 +9,7 @@ namespace DeliveryWinFormsApp
 {
     public static class OrderStorage
     {
-        private static IOrderRepository orderRepository = new OrderListRepository();
+        private static IOrderRepository orderRepository = new OrderJsonRepository();
         public static void Add(OrderViewModel order)
         {
             orderRepository.Add(order);
