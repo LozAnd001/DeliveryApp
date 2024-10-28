@@ -9,15 +9,15 @@ namespace DeliveryWinFormsApp
 {
     public static class OrderStorage
     {
-        private static List<OrderViewModel> orderViewModelsStorage = new List<OrderViewModel>();
-        public static void AddOrder(OrderViewModel order)
+        private static IOrderRepository orderRepository = new OrderListRepository();
+        public static void Add(OrderViewModel order)
         {
-            orderViewModelsStorage.Add(order);
+            orderRepository.Add(order);
         }
 
-        public static List<OrderViewModel> GetOrders()
+        public static List<OrderViewModel> GetAll()
         {
-            return orderViewModelsStorage;
+            return orderRepository.GetAll();
         }
     }
 }

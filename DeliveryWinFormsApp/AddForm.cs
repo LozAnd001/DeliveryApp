@@ -40,7 +40,7 @@ namespace DeliveryWinFormsApp
                     OrderCreationDate = DateTime.Now,
                     OrderDeliveryDate = dateDeliveryOrderPicker.Value
                 };
-                OrderStorage.AddOrder(newOrder);
+                OrderStorage.Add(newOrder);
                 Close();
             }
         }
