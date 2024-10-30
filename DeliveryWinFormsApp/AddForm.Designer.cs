@@ -109,7 +109,7 @@
             Controls.Add(weightTextBox);
             Controls.Add(label1);
             Name = "AddForm";
-            Text = "AddForm";
+            Text = "Add";
             Load += AddForm_Load;
             ResumeLayout(false);
             PerformLayout();

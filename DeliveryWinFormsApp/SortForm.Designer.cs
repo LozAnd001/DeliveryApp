@@ -39,6 +39,7 @@
             label3 = new Label();
             districtTextBox = new TextBox();
             sortButton = new Button();
+            downloadButton = new Button();
             ((System.ComponentModel.ISupportInitialize)ordersDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -132,11 +133,22 @@
             sortButton.UseVisualStyleBackColor = true;
             sortButton.Click += sortButton_Click;
             // 
+            // downloadButton
+            // 
+            downloadButton.Location = new Point(609, 255);
+            downloadButton.Name = "downloadButton";
+            downloadButton.Size = new Size(147, 31);
+            downloadButton.TabIndex = 8;
+            downloadButton.Text = "Загрузить в Excel файл";
+            downloadButton.UseVisualStyleBackColor = true;
+            downloadButton.Click += downloadButton_Click;
+            // 
             // SortForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(795, 397);
+            Controls.Add(downloadButton);
             Controls.Add(sortButton);
             Controls.Add(districtTextBox);
             Controls.Add(label3);
@@ -146,7 +158,7 @@
             Controls.Add(startDateTimePicker);
             Controls.Add(ordersDataGridView);
             Name = "SortForm";
-            Text = "SortForm";
+            Text = "Sort";
             Load += SortForm_Load;
             ((System.ComponentModel.ISupportInitialize)ordersDataGridView).EndInit();
             ResumeLayout(false);
@@ -166,5 +178,6 @@
         private DataGridViewTextBoxColumn weight;
         private DataGridViewTextBoxColumn district;
         private DataGridViewTextBoxColumn deliveryDate;
+        private Button downloadButton;
     }
 }

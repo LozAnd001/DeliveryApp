@@ -7,17 +7,16 @@ namespace DeliveryApp.Db
     {
         public DbSet<District> Districts { get; set; }
         public DbSet<Order> Orders { get; set; }
-        //public DatabaseContext(DbContextOptions<DatabaseContext> options): base(options) 
-        //{
-        //    Database.EnsureCreated();
-        //}
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=;Trusted_Connection=True;");
-        //}
-
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        {
+            Database.EnsureCreated();
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("Data Source=products.db");
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=;Trusted_Connection=True;");
+        }
+
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

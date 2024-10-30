@@ -11,13 +11,8 @@ namespace DeliveryWinFormsApp
 {
     public static class OrderStorage
     {
-        private static IOrderRepository orderRepository = new OrderDBRepository();
+        private static IOrderRepository orderRepository = new OrderJsonRepository();
 
-        //static OrderStorage()
-        //{
-        //    orderRepository = new OrderDBRepository();
-        //    orderRepository.dbCon
-        //}
         public static void Add(OrderViewModel orderViewModel)
         {
             var order = Map.GetDB(orderViewModel);
