@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             menuStrip1 = new MenuStrip();
             сортировкаЗаказовToolStripMenuItem = new ToolStripMenuItem();
             добавитьЗаказToolStripMenuItem = new ToolStripMenuItem();
+            districtBindingSource = new BindingSource(components);
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)districtBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -51,7 +54,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { сортировкаЗаказовToolStripMenuItem, добавитьЗаказToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(891, 28);
+            menuStrip1.Size = new Size(871, 28);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -69,11 +72,15 @@
             добавитьЗаказToolStripMenuItem.Text = "Добавить заказ";
             добавитьЗаказToolStripMenuItem.Click += добавитьЗаказToolStripMenuItem_Click;
             // 
+            // districtBindingSource
+            // 
+            districtBindingSource.DataSource = typeof(DeliveryApp.Db.Models.District);
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(891, 279);
+            ClientSize = new Size(871, 304);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -81,6 +88,7 @@
             Text = "Form1";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)districtBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -91,5 +99,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem сортировкаЗаказовToolStripMenuItem;
         private ToolStripMenuItem добавитьЗаказToolStripMenuItem;
+        private BindingSource districtBindingSource;
     }
 }

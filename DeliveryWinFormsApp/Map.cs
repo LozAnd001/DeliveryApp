@@ -12,8 +12,9 @@ namespace DeliveryWinFormsApp
     {
         public static District GetDB(DistrictViewModel district)
         {
-            return new District(district.Name)
+            return new District()
             {
+                Name = district.Name,
                 Id = district.Id,
             };
         }
